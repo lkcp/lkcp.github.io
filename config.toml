@@ -1,0 +1,4 @@
+baseURL = 'http://lkcp.github.io/'
+languageCode = 'zh-cn'
+title = 'LaughTale'
+theme = 'nostyleplease'
