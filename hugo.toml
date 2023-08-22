@@ -1,0 +1,25 @@
+baseURL = 'https://pqcryp.top/'
+languageCode = 'en-us'
+title = '认真写点东西的地方'
+theme = 'yinyang'
+DefaultContentLanguage = "cn"
+
+[params]
+headTitle = "lkcp's blog"
+mainSections = ["posts"]
+[languages]
+  [languages.en]
+    contentDir = "content/en"
+    languageName = "English"
+    weight = 1
+  [languages.cn]
+    contentDir = "content/cn"
+    languageName = "Chinese"
+    weight = 2
+
+[[params.socials]]
+name = "About Me"
+link = "https://pqcryp.top/about.html"
+[[params.socials]]
+name = "Github"
+link = "https://github.com/lkcp"
