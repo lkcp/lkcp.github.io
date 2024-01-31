@@ -1,25 +1,32 @@
-baseURL = 'https://pqcryp.top/'
+baseURL = 'https://www.pqcryp.top/'
 languageCode = 'en-us'
 title = '认真写点东西的地方'
-theme = 'yinyang'
-DefaultContentLanguage = "cn"
+theme = "etch"
 
 [params]
-headTitle = "lkcp's blog"
-mainSections = ["posts"]
-[languages]
-  [languages.en]
-    contentDir = "content/en"
-    languageName = "English"
-    weight = 1
-  [languages.cn]
-    contentDir = "content/cn"
-    languageName = "Chinese"
-    weight = 2
+description = "lkcp's blog"
+dark = "auto"
+copyright = "Copyright © 2024 lkcp"
+highlight = true
 
-[[params.socials]]
-name = "About Me"
-link = "https://pqcryp.top/about.html"
-[[params.socials]]
-name = "Github"
-link = "https://github.com/lkcp"
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "posts"
+    title = "posts"
+    url = "/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "about"
+    name = "about"
+    title = "about"
+    url = "/about/"
+    weight = 20
+
+[permalinks]
+  posts = "/:title/"
+
+[markup.goldmark.renderer]
+  # Allows HTML in Markdown
+  unsafe = true
