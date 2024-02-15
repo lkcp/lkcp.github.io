@@ -2,7 +2,7 @@
 title = "记录一次奇怪的 org-latex-preview bug"
 author = ["lkcp"]
 date = 2024-02-01T12:36:00+08:00
-draft = true
+draft = false
 +++
 
 ## 问题 {#问题}
