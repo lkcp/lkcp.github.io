@@ -63,7 +63,7 @@ Python: can't open file '/Users/username/Library/CloudStorage/OneDrive-个人/..
         :latex-compiler
         ("latex -interaction nonstopmode -output-directory %o %f")
         :image-converter
-        ("dvipng -D %D -T tight -o %O %f")
+        ("dvipng -D %D -T tight -o %O %o/%b.dvi")
         :transparent-image-converter
         ("dvipng -D %D -T tight -bg Transparent -o %O %f"))
      (dvisvgm :programs
@@ -73,7 +73,7 @@ Python: can't open file '/Users/username/Library/CloudStorage/OneDrive-个人/..
          :latex-compiler
          ("latex -interaction nonstopmode -output-directory %o %f")
          :image-converter
-         ("dvisvgm %o/%b.xdv --no-fonts --exact-bbox --scale=%S --output=%O"))
+         ("dvisvgm %f --no-fonts --exact-bbox --scale=%S --output=%O"))
      (imagemagick :programs
              ("latex" "convert")
              :description "pdf > png" :message "you need to install the programs: latex and imagemagick." :image-input-type "pdf" :image-output-type "png" :image-size-adjust
@@ -84,3 +84,5 @@ Python: can't open file '/Users/username/Library/CloudStorage/OneDrive-个人/..
              ("convert -density %D -trim -antialias %f -quality 100 %O")))
     )
     ```
+
+当 "dvi &gt; svg" 或者 "pdf &gt; png" 出现问题时则对应地修改另外两部分的配置即可。
