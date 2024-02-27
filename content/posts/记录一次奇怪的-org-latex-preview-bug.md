@@ -52,7 +52,7 @@ Python: can't open file '/Users/username/Library/CloudStorage/OneDrive-个人/..
     %o    base directory of input file
     %O    absolute output file name
 
-    所以是 "dvisvgm %f --no-fonts --exact-bbox --scale=%S --output=%O" 这里的 %f 导致了错误的路径，更改为 "%o/%b.xdv" 即可。
+    所以是 dvipng 下的 %f 导致了错误的路径，更改为 "%o/%b.type" 即可。
     即更改默认的 org-preview-latex-process-alist 如下：
     ```emacs-lisp
     (setq org-preview-latex-process-alist
@@ -61,7 +61,7 @@ Python: can't open file '/Users/username/Library/CloudStorage/OneDrive-个人/..
         :description "dvi > png" :message "you need to install the programs: latex and dvipng." :image-input-type "dvi" :image-output-type "png" :image-size-adjust
         (1.0 . 1.0)
         :latex-compiler
-        ("latex -interaction nonstopmode -output-directory %o %f")
+        ("latex -interaction nonstopmode -output-directory %o %o/%b.tex")
         :image-converter
         ("dvipng -D %D -T tight -o %O %o/%b.dvi")
         :transparent-image-converter
