@@ -47,10 +47,10 @@ Python: can't open file '/Users/username/Library/CloudStorage/OneDrive-个人/..
     另一种方法就是设置 dvipng 的执行路径，查看 org-preview-latex-process-alist 的定义,其中对占位符给出定义如下
     Place-holders used by ‘:image-converter’ and ‘:latex-compiler’:
 
-    %f    input file name
-    %b    base name of input file
-    %o    base directory of input file
-    %O    absolute output file name
+    -   %f    input file name
+    -   %b    base name of input file
+    -   %o    base directory of input file
+    -   %O    absolute output file name
 
     所以是 dvipng 下的 %f 导致了错误的路径，更改为 "%o/%b.type" 即可。
     即更改默认的 org-preview-latex-process-alist 如下：
@@ -85,4 +85,4 @@ Python: can't open file '/Users/username/Library/CloudStorage/OneDrive-个人/..
     )
     ```
 
-当 "dvi &gt; svg" 或者 "pdf &gt; png" 出现问题时则对应地修改另外两部分的配置即可。
+当 "dvi &gt; svg" 或者 "pdf &gt; png" 出现问题时则对应地修改另外两
